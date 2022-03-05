@@ -1,0 +1,76 @@
+[
+    {
+        "contractId": 1,
+        "contractNumber": 55,
+        "monthlyRate": 66.0,
+        "customer": {
+            "customerId": 1,
+            "firstName": "Jose",
+            "lastName": "Neto",
+            "birthDate": "1980-01-01"
+        },
+        "vehicle": {
+            "vehicleId": 1,
+			"brand": "BMW",
+			"model": "X6",
+			"vin": "x1234",
+			"year": 2020,
+			"price": 45350.00
+        }
+    },
+    {
+        "contractId": 2,
+        "contractNumber": 99,
+        "monthlyRate": 99.0,
+        "customer": {
+            "customerId": 1,
+            "firstName": "Jose",
+            "lastName": "Neto",
+            "birthDate": "1980-01-01"
+        },
+        "vehicle": {
+            "vehicleId": 2,
+			"brand": "VW",
+			"model": "Polo",
+			"vin": "y1245",
+			"year": 2019,
+			"price": 40000.00
+        }
+    },
+    {
+        "contractId": 3,
+        "contractNumber": 69,
+        "monthlyRate": 66.0,
+        "customer": {
+            "customerId": 2,
+			"firstName": "Daniel",
+			"lastName": "Leite",
+			"birthDate": "1985-06-06"
+        },
+        "vehicle": {
+            "vehicleId": 3,
+			"brand": "Mercedes",
+			"model": "XT",
+			"vin": "x1234",
+			"year": 2015,
+			"price": 80000.00
+        }
+    },
+    {
+        "contractId": 4,
+        "contractNumber": 1234,
+        "monthlyRate": 212.0,
+        "customer": {
+            "customerId": 3,
+			"firstName": "Michael",
+			"lastName": "Fullman",
+			"birthDate": "1990-03-03"
+        },
+        "vehicle": {
+            "customerId": 4,
+			"firstName": "Maycon",
+			"lastName": "Ferlz",
+			"birthDate": "1970-05-05"
+        }
+    }
+]

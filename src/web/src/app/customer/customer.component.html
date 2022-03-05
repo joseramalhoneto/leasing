@@ -1,0 +1,53 @@
+<app-nav-bar></app-nav-bar>
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-link"  data-toggle="modal" data-target="#addCustomerModal" (click)="setAction('add')">Add</button>
+    <button type="button" class="btn btn-link"  data-toggle="modal" data-target="#addCustomerModal"(click)="setAction('update');setContract()">Update</button>
+    <button type="button" class="btn btn-link" (click)="deleteCustomer()">Delete</button>
+  </div>
+</div>
+
+<ag-grid-angular
+    style="width: 100%;"
+    class="ag-theme-alpine"
+    [rowData]="customers"
+    [columnDefs]="columnDefs"
+    [pagination]="true"
+    (gridReady)="onGridReady($event)"
+    rowSelection="single"
+    [defaultColDef]="defaultColDef">
+</ag-grid-angular>
+
+<div class="modal fade" id="addCustomerModal" tabindex="-1" role="dialog" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+       <div class="modal-header">
+          <h5 class="modal-title" id="addCustomerModalLabel">Add Contract</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+       </div>
+       <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="saveCustomer(addForm)">
+          <input type="hidden" name="customerId"  [(ngModel)]="customer.customerId" />
+          <div class="form-group">
+             <label for="name">First Name</label>
+             <input type="text"  [(ngModel)]="customer.firstName" name="firstName" class="form-control" id="firstName" placeholder="First Name" required>
+          </div>
+          <div class="form-group">
+             <label for="text">Last Name</label>
+             <input type="text" [(ngModel)]="customer.lastName" name="lastName" class="form-control" id="lastName" placeholder="Last Name" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Birth Date</label>
+            <input type="date" [ngModel] ="customer.birthDate | date:'yyyy-MM-dd'" (ngModelChange)="customer.birthDate = $event" class="form-control" name="birthDate" class="form-control" id="birthDate" >
+          </div>
+          <div class="modal-footer">
+             <button type="button" id="add-customer-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
+          </div>
+          </form>
+       </div>
+    </div>
+  </div>
+  </div>

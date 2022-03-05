@@ -1,0 +1,60 @@
+<app-nav-bar></app-nav-bar>
+
+<ag-grid-angular
+    style="width: 100%;"
+    class="ag-theme-alpine"
+    [rowData]="contracts"
+    [columnDefs]="columnDefs"
+    [pagination]="true"
+    (gridReady)="onGridReady($event)"
+    rowSelection="single"
+    [defaultColDef]="defaultColDef">
+</ag-grid-angular>
+
+<div class="modal fade" id="addContractModal" tabindex="-1" role="dialog" aria-labelledby="addContractModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+       <div class="modal-header">
+          <h5 class="modal-title" id="addContractModalLabel">Add Contract</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+       </div>
+       <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="saveContract(addForm)">
+          <input type="hidden" name="contractId"  [(ngModel)]="contract.contractId" />
+          <div class="form-group">
+             <label for="name">Contract Number</label>
+             <input type="text"  [(ngModel)]="contract.contractNumber" name="contractNumber" class="form-control" id="name" placeholder="Contract Number" required>
+          </div>
+          <div class="form-group">
+             <label for="email">Monthly Rate</label>
+             <input type="email" [(ngModel)]="contract.monthlyRate" name="monthlyRate" class="form-control" id="monthlyRate" placeholder="Monthly Rate" required>
+          </div>
+          <div class="form-group">
+            <label for="customerId">Customer</label>
+            <select class="form-control" name="customerId" required ngModel>
+              <option selected></option>
+              <option *ngFor="let customer of customers"
+                          [ngValue]="customer.customerId" >
+                        {{customer.firstName}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vehicleId">Vehicle</label>
+            <select class="form-control" name="vehicleId" required ngModel>
+              <option selected></option>
+              <option *ngFor="let vehicles of vehicles"
+                          [ngValue]="vehicles.vehicleId" >
+                        {{vehicles.brand}} - {{vehicles.model}}</option>
+                        </select>
+          </div>
+          <div class="modal-footer">
+             <button type="button" id="add-customer-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
+          </div>
+          </form>
+       </div>
+    </div>
+  </div>
+  </div>

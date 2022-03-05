@@ -1,0 +1,42 @@
+[
+    {
+        "vehicleId": 1,
+        "brand": "BMW",
+        "model": "X6",
+        "vin": "x1234",
+        "year": 2020,
+        "price": 45350.00
+    },
+    {
+        "vehicleId": 2,
+        "brand": "VW",
+        "model": "Polo",
+        "vin": "y1245",
+        "year": 2019,
+        "price": 40000.00
+    },
+    {
+        "vehicleId": 3,
+        "brand": "Mercedes",
+        "model": "XT",
+        "vin": "x1234",
+        "year": 2015,
+        "price": 80000.00
+    },
+    {
+        "vehicleId": 4,
+        "brand": "VW",
+        "model": "Polo",
+        "vin": "x9876",
+        "year": 2020,
+        "price": 30000.00
+    },
+    {
+        "vehicleId": 5,
+        "brand": "Hyunday",
+        "model": "HB20",
+        "vin": "a7685",
+        "year": 2014,
+        "price": 20000.00
+    }
+]
